@@ -14,7 +14,6 @@ class ResidualMamba(nn.Module):
             d_conv=d_conv,
             expand=expand
         )
- 
         norm_layer = nn.LayerNorm
         self.norm1 = norm_layer(d_model)
         self.norm2 = norm_layer(d_model)
@@ -40,8 +39,7 @@ class ResidualMamba(nn.Module):
 
 class RDCN_stem(nn.Module):
     def __init__(self, img_size=224, patch_size=16, in_chans=3, num_classes=5,
-                 embed_dim=768, depth=12, num_heads=12, mlp_ratio=4., qkv_bias=True,
-                 drop_rate=0., attn_drop_rate=0., drop_path_rate=0., use_conv_stem=True):
+                 embed_dim=768, depth=12, drop_rate=0.):
         super().__init__()
         self.num_classes = num_classes
         self.num_features = embed_dim
@@ -82,9 +80,7 @@ class RDCN_stem(nn.Module):
             nn.init.constant_(m.weight, 1.0)
 
     def forward_features(self, x):
-        B = x.shape[0]
         x = self.patch_embed(x)
-        cls_tokens = self.cls_token.expand(B, x.shape[1], -1)
         x = x + self.cls_token
         
         x = x + self.pos_embed
@@ -129,12 +125,7 @@ class CFIW_net(nn.Module):
                  num_classes=5,
                  embed_dim=384,
                  depth=6,
-                 num_heads=12,
-                 mlp_ratio=4.,
-                 qkv_bias=True,
-                 drop_rate=0.,
-                 attn_drop_rate=0.,
-                 drop_path_rate=0.):
+                 num_heads=12):
         super().__init__()
         
         self.image_domain_branch = RDCN_stem(
@@ -142,13 +133,7 @@ class CFIW_net(nn.Module):
             patch_size=patch_size,
             in_chans=in_chans,
             embed_dim=embed_dim,
-            depth=1,
-            num_heads=num_heads,
-            mlp_ratio=mlp_ratio,
-            qkv_bias=qkv_bias,
-            drop_rate=drop_rate,
-            attn_drop_rate=attn_drop_rate,
-            drop_path_rate=drop_path_rate
+            depth=1
         )
         
         self.waveform_domain_branch = RDCN_stem(
@@ -156,13 +141,7 @@ class CFIW_net(nn.Module):
             patch_size=patch_size,
             in_chans=15,
             embed_dim=embed_dim,
-            depth=1,
-            num_heads=num_heads,
-            mlp_ratio=mlp_ratio,
-            qkv_bias=qkv_bias,
-            drop_rate=drop_rate,
-            attn_drop_rate=attn_drop_rate,
-            drop_path_rate=drop_path_rate
+            depth=1
         )
 
         self.post_blocks = nn.ModuleList([
