@@ -2,7 +2,7 @@
 
 This repository contains PyTorch code.
 
-Code and dataset will be uploaded recently.
+Code and dataset have both been uploaded.
 
 # Train, test, and predict
 
@@ -45,7 +45,7 @@ We have provided two images of weld TOFD defects from real industrial scenarios 
 </tr>
 </tbody></table>
 
-* The model's **pre-trained weights**on the ImageNet100 dataset are provided as follows:
+* The model's **pre-trained weights **on the ImageNet100 dataset are provided as follows:
 
 <table><tbody>
 <!-- START TABLE -->
