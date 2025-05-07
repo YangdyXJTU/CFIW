@@ -56,7 +56,7 @@ We have provided two images of weld TOFD defects from real industrial scenarios 
 <!-- TABLE BODY -->
 <tr><td align="center">CFIW</td>
 <td align="center">ImageNet100</td>
-<td align="center"><a href="https://drive.google.com/file/d/1HWqTLearxOiwJRirU_fGwILfu9anNiM2/view?usp=drive_link">download</a></td>
+<td align="center"><a href="https://drive.google.com/file/d/1WaCu0zBY1h7xy3cU2laYtTFvfUlJHNKD/view?usp=drive_link">download</a></td>
 </tr>
 </tbody></table>
 
