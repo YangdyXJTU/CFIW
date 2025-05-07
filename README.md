@@ -37,7 +37,7 @@ We have provided two images of weld TOFD defects from real industrial scenarios 
 <!-- TABLE HEADER -->
 <th valign="bottom">Model</th>
 <th valign="bottom">Trained Epochs</th>
-<th valign="bottom">Trained Weights(☁️ Google Drive)</th>
+<th valign="bottom">Trained Weights (☁️ Google Drive)</th>
 <!-- TABLE BODY -->
 <tr><td align="center">CFIW</td>
 <td align="center">66</td>
@@ -52,7 +52,7 @@ We have provided two images of weld TOFD defects from real industrial scenarios 
 <!-- TABLE HEADER -->
 <th valign="bottom">Model</th>
 <th valign="bottom">Dataset</th>
-<th valign="bottom">Pretrained Weights(☁️ Google Drive)</th>
+<th valign="bottom">Pretrained Weights (☁️ Google Drive)</th>
 <!-- TABLE BODY -->
 <tr><td align="center">CFIW</td>
 <td align="center">ImageNet100</td>
